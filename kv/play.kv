@@ -1,0 +1,161 @@
+#:import COLOR kivy.utils.get_color_from_hex
+#:set RED "#F94A69"
+#:set GREEN "#06A5AB"
+
+<PlayScreen>:
+  id: 'play_screen'
+  name: 'play_screen'
+  BoxLayout:
+    # Settings
+    orientation: "vertical"
+    padding: root.width * .02, root.height * .02
+    spacing: min(root.width, root.height) * .02
+
+    Label:
+      size_hint_y: None
+      height: self.texture_size[1] + (self.texture_size[1]/2)
+      markup: True
+      font_name: "Roboto"
+      text: "[b]Simple Math Tutor[/b]"
+      font_size: min(root.height, root.width) / 10
+
+##############################################################################################3
+    Button:
+      font_name: "Roboto"
+      font_size: min(self.height, self.width) / 4
+      bold: True
+      background_normal: "./images/button_normal.png"
+      background_down: "./images/button_down.png"
+      background_color: COLOR("#0066BA")
+      border: (2, 2, 2, 2)
+      text: "Addition"
+      on_release: app.root.changeScreen(self.text.lower())
+    Button:
+      font_name: "Roboto"
+      font_size: min(self.height, self.width) / 4
+      bold: True
+      background_normal: "./images/button_normal.png"
+      background_down: "./images/button_down.png"
+      background_color: COLOR("#0066BA")
+      border: (2, 2, 2, 2)
+      text: "Subtraction"
+      on_release: 
+    Button:
+      font_name: "Roboto"
+      font_size: min(self.height, self.width) / 4
+      bold: True
+      background_normal: "./images/button_normal.png"
+      background_down: "./images/button_down.png"
+      background_color: COLOR("#0066BA")
+      border: (2, 2, 2, 2)
+      text: "Multiplication"
+      on_release: 
+    Button:
+      font_name: "Roboto"
+      font_size: min(self.height, self.width) / 4
+      bold: True
+      background_normal: "./images/button_normal.png"
+      background_down: "./images/button_down.png"
+      background_color: COLOR("#0066BA")
+      border: (2, 2, 2, 2)
+      text: "Division"
+      on_release: 
+    Button:
+      font_name: "Roboto"
+      font_size: min(self.height, self.width) / 4
+      bold: True
+      background_normal: "./images/button_normal.png"
+      background_down: "./images/button_down.png"
+      background_color: COLOR("#0066BA")
+      border: (2, 2, 2, 2)
+      text: "Mix!"
+      on_release: 
+      background_color: COLOR(GREEN)
+    Button:
+      font_name: "Roboto"
+      font_size: min(self.height, self.width) / 4
+      bold: True
+      background_normal: "./images/button_normal.png"
+      background_down: "./images/button_down.png"
+      background_color: COLOR("#0066BA")
+      border: (2, 2, 2, 2)
+      text: 'About this app'
+      background_color: COLOR(RED)
+
+####################################################################################################
+
+
+<MathScreen>:
+  question_text: question_text
+  answer_text: answer_text
+  BoxLayout:
+    orientation: "vertical"
+    padding: root.width * .02, root.height * .02
+    spacing: 10
+    Label:
+      size_hint_y: None
+      height: self.texture_size[1] + (self.texture_size[1]/2)
+      markup: True
+      font_name: "Roboto"
+      id: question_text
+      text: "some dummy text"
+      font_size: min(root.height, root.width) / 10
+    BoxLayout:
+      orientation: "horizontal"
+      size_hint_y: None
+      Label:
+        size_hint_y: None
+        height: self.texture_size[1] + (self.texture_size[1]/2)
+        markup: True
+        font_name: "Roboto"
+        id: answer_text
+        text: ""
+        font_size: min(root.height, root.width) / 10
+      Button:
+        id: clearn_btn
+        text: "[b]Clear[/b]"
+        background_color: COLOR(RED)
+        markup: True
+        size_hint: .3, None
+        height: question_text.texture_size[1]
+        on_release: answer_text.text = ""
+
+
+<MathPopup>:
+  size_hint: .8, .8
+  title: "Result"
+  title_size: root.height * .05
+  seperator_color: COLOR(GREEN)
+  auto_dissmiss: False
+  message: message
+  wrapped_button: wrapped_button
+  BoxLayout:
+    orientation: "vertical"
+    padding: root.width * .02, root.height * .02
+    spacing: min(root.width, root.height) * .02
+    Label:
+      id: message
+      text: "sldkjfskldjflsdjfkljdslfj"
+      halign: "center"
+      markup: True
+      font_size: root.height / 10
+      text_size: self.width, None
+      center_y: .5
+    Button:
+      id: wrapped_button
+      text: "Close"
+      size_hint: 1, None
+      height: root.height / 8
+      on_release: 
+
+<AboutScreen@Screen>:
+  BoxLayout:
+    padding: root.width * .02, root.height * .02
+    Label:
+      text: 
+      halign: "center"
+      markup: True
+      font_size: root.height / 20
+      text_size: self.width, None
+      center_y: .5
+      on_ref_press:

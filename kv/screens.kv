@@ -1,0 +1,205 @@
+<MiddleScreen>:
+  name: "middle_screen"
+  BoxLayout:
+    orientation: 'vertical'
+    background_color: COLOR("#0066BA")
+    ActionBar:
+      use_separator: True
+      ActionView:
+        ActionPrevious:
+          ActionButton:
+            on_press: app.root.current = 'news_screen' 
+            with_previous: True
+        ActionButton:
+          icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+          on_press: 
+        ActionButton:
+          important: True
+          text: 'middle'
+          on_press: app.root.current = 'middle_screen'
+        ActionButton:
+          text: 'Records'
+          on_press: app.root.current = 'records_screen'
+        ActionButton:
+          text: 'News'
+          on_press: app.root.current = 'news_screen' 
+        ActionButton:
+          text: 'Others'
+          on_press:  app.root.current = 'others_screen' 
+        ActionOverflow
+          ActionButton:
+            text: 'GTP'
+            on_press:  app.root.current = 'gtp_screen' 
+          ActionButton:
+            text: 'Woodin'
+            on_press:  app.root.current = 'woodin_screen' 
+          ActionButton:
+            text: 'Holland'
+            on_press: app.root.current = 'holland_screen' 
+    BoxLayout:
+    SelectLabel:
+    MiddleThree:
+    BoxLayout:
+    BoxLayout:
+    BoxLayout:
+      size_hint: 1,.5
+      MiddleThreeText:
+
+
+<OthersScreen>:
+  name: "others_screen"
+  BoxLayout:
+    orientation: 'vertical'
+    background_color: COLOR("#0066BA")
+    ActionBar:
+      use_separator: True
+      ActionView:
+        ActionPrevious:
+          title: "My Workplace >"
+          with_previous: False
+        ActionButton:
+          icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+          on_press: 
+        ActionButton:
+          important: True
+          text: 'middle'
+          on_press: app.root.current = 'middle_screen'
+        ActionButton:
+          text: 'Records'
+          on_press: app.root.current = 'records_screen'
+        ActionButton:
+          text: 'News'
+          on_press: app.root.current = 'news_screen' 
+        ActionButton:
+          text: 'Others'
+          on_press:  app.root.current = 'others_screen' 
+        ActionOverflow
+          ActionButton:
+            text: 'GTP'
+            on_press:  app.root.current = 'gtp_screen' 
+          ActionButton:
+            text: 'Woodin'
+            on_press:  app.root.current = 'woodin_screen' 
+          ActionButton:
+            text: 'Holland'
+            on_press: app.root.current = 'holland_screen' 
+    PlayScreen:
+      
+
+
+<GTPScreen>:
+  name: "records_screen"
+  BoxLayout:
+    orientation: 'vertical'
+    background_color: COLOR("#0066BA")
+    ActionBar:
+      use_separator: True
+      ActionView:
+        ActionPrevious:
+          title: "My Workplace >"
+          with_previous: False
+        ActionButton:
+          icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+          on_press: 
+        ActionButton:
+          important: True
+          text: 'middle'
+          on_press: app.root.current = 'middle_screen'
+        ActionButton:
+          text: 'Records'
+          on_press: app.root.current = 'records_screen'
+        ActionButton:
+          text: 'News'
+          on_press: app.root.current = 'news_screen' 
+        ActionButton:
+          text: 'Others'
+          on_press:  app.root.current = 'others_screen' 
+        ActionOverflow
+          ActionButton:
+            text: 'GTP'
+            on_press:  app.root.current = 'gtp_screen' 
+          ActionButton:
+            text: 'Woodin'
+            on_press:  app.root.current = 'woodin_screen' 
+          ActionButton:
+            text: 'Holland'
+            on_press: app.root.current = 'holland_screen' 
+    GTPLine:
+
+
+
+<WoodinScreen>:
+  BoxLayout:
+    orientation: 'vertical'
+    background_color: COLOR("#0066BA")
+    ActionBar:
+      use_separator: True
+      ActionView:
+        ActionPrevious:
+          title: "My Workplace >"
+          with_previous: False
+        ActionButton:
+          icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+          on_press: 
+        ActionButton:
+          important: True
+          text: 'middle'
+          on_press: app.root.current = 'middle_screen'
+        ActionButton:
+          text: 'Records'
+          on_press: app.root.current = 'records_screen'
+        ActionButton:
+          text: 'News'
+          on_press: app.root.current = 'news_screen' 
+        ActionButton:
+          text: 'Others'
+          on_press:  app.root.current = 'others_screen' 
+        ActionOverflow
+          ActionButton:
+            text: 'GTP'
+            on_press:  app.root.current = 'gtp_screen' 
+          ActionButton:
+            text: 'Woodin'
+            on_press:  app.root.current = 'woodin_screen' 
+          ActionButton:
+            text: 'Holland'
+            on_press: app.root.current = 'holland_screen' 
+    WoodinLine:
+
+<HollandScreen>:
+  BoxLayout:
+    orientation: 'vertical'
+    background_color: COLOR("#0066BA")
+    ActionBar:
+      use_separator: True
+      ActionView:
+        ActionPrevious:
+          title: "My Workplace >"
+          with_previous: False
+        ActionButton:
+          icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+          on_press: 
+        ActionButton:
+          important: True
+          text: 'middle'
+          on_press: app.root.current = 'middle_screen'
+        ActionButton:
+          text: 'Records'
+          on_press: app.root.current = 'records_screen'
+        ActionButton:
+          text: 'News'
+          on_press: app.root.current = 'news_screen' 
+        ActionButton:
+          text: 'Others'
+          on_press:  app.root.current = 'others_screen' 
+        ActionOverflow
+          ActionButton:
+            text: 'GTP'
+            on_press:  app.root.current = 'gtp_screen' 
+          ActionButton:
+            text: 'Woodin'
+            on_press:  app.root.current = 'woodin_screen' 
+          ActionButton:
+            text: 'Holland'
+            on_press: app.root.current = 'holland_screen' 
+    HollandLine:

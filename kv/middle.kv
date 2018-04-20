@@ -1,0 +1,64 @@
+<Header@BoxLayout>:
+  orientation: 'horizontal'
+  padding: 2
+  TextInput:
+    size_hint_x: 1.5
+  ToggleButton: 
+    text: 'Search'
+  Button:
+    text: 'My WorkPlace >'
+ 
+<Topmost>:
+  
+<MiddleThree@BoxLayout>:
+  BoxLayout:
+    canvas:
+      Ellipse:
+        pos: 70,200
+        size: 150, 150
+        source: '../images/gtp.jpg'
+      Ellipse:
+        pos: 320,200
+        size: 150, 150
+        source: '../images/woodin.jpg'
+      Ellipse:
+        pos: 570,200
+        size: 150, 150
+        source: '../images/holland.jpg'
+    
+     
+<MiddleThreeText@BoxLayout>:
+  BoxLayout:
+    orientation: 'horizontal'
+    spacing: min(root.width, root.height) * .05
+    Button:
+      text: 'GTP'
+      on_press: app.root.current = 'gtp_screen' 
+    Button:
+      text: 'Woodin'
+      on_press: app.root.current = 'woodin_screen' 
+    Button:
+      text: 'Holland'
+      on_press: app.root.current = 'holland_screen' 
+
+
+
+<Name@BoxLayout>:
+  Label:
+    text: '@Afyacy'
+<SelectLabel@BoxLayout>
+  Label:
+    markup: True
+    text: '[size=50px][color=#FFA500]Select[/color] [sub] a [/sub][i] [b]Product[/b][/i][/size]'
+
+
+<Header@BoxLayout>:
+  orientation: 'horizontal'
+  padding: 2
+  TextInput:
+    size_hint_x: 1.5
+  ToggleButton: 
+    text: 'Search'
+  Button:
+    text: 'My WorkPlace >'
+ 
