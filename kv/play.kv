@@ -81,6 +81,7 @@
       border: (2, 2, 2, 2)
       text: 'About this app'
       background_color: COLOR(RED)
+      on_release: app.changeScreen(self)
 
 ####################################################################################################
 
@@ -152,7 +153,7 @@
   BoxLayout:
     padding: root.width * .02, root.height * .02
     Label:
-      text: 
+      text: app.getText()
       halign: "center"
       markup: True
       font_size: root.height / 20

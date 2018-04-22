@@ -22,6 +22,8 @@ from kivy.utils import get_color_from_hex
 from arithmetic import Arithmetic
 from json_settings import json_settings
 
+sm = ScreenManager()
+
 Window.clearcolor = get_color_from_hex("#16203B")
 Builder.load_file("kv/middle.kv")
 Builder.load_file("kv/clothes.kv")
@@ -92,13 +94,8 @@ class TextileManager(ScreenManager):
     def __init__(self, **kwargs):
     	super(TextileManager, self).__init__(**kwargs)
 
-    def changeScreen(self, next_screen):
-    	operations = "addition subtraction multiplication division".split()
-    	question = None
-
-    	if next_screen == "about this app":
-    		self.ids.kivy_screen_manager.current = "about_screen"
     
+ ################################################################################################3   
 
 class TextileManagerApp(App):
 	#---------------------------------------------------------------------------
@@ -106,15 +103,25 @@ class TextileManagerApp(App):
         m = TextileManager(transition=WipeTransition())
         return TextileManager()
 
+    #----------------------------------------------------------------------------
     def __init__(self, **kwargs):
     	super(TextileManagerApp, self).__init__(**kwargs)
 
+    #----------------------------------------------------------------------------
+
+    def changeScreen(self, next_screen):
+        #self.root.ids['kivy_screen_manager'].current = 'about_screen'
+        self.root.current = 'about_screen'
+    #----------------------------------------------------------------------------
+
     def getText(self):
     	return ("Hey There!\nThis App was built using"
-                "[b][ref=kivy]kivy[/ref][/b]\n"
+                "[b][ref=kivy] kivy[/ref][/b]\n"
                 "Feel free to look at the source code "
                 "[b][ref=source]here[/ref][/b].\n"
-                "This app is under the [b][ref=mmm]mmm License[/ref][/b]")
+                "This app is under the [b][ref=Afyacy] Afyacy License[/ref][/b]")
+
+    #----------------------------------------------------------------------------
 
     def on_ref_press(self, instance, ref):
     	_dict = {
