@@ -1,9 +1,21 @@
+#'If' there's opengl problem, issue the commands 
+#pip install kivy.deps.angle
+#set KIVY_GL_BACKEND=angle_sdl2 and try running again
+
+#To make it compartible with different python vertion
 from __future__ import division, absolute_import
 from __future__ import print_function, unicode_literals
+
+
+from kivy.config import Config 
+Config.set('graphics', 'borderless', 'True')
+from kivy.core.window import Window
+Window.bordeless = 'True'
 
 import webbrowser
 import random
 
+#calling appropriate module for some functions to work
 from kivy.app import App
 from kivy.clock import Clock
 from kivy.core.text import LabelBase
@@ -19,18 +31,21 @@ from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import ScreenManager,Screen, WipeTransition
 from kivy.utils import get_color_from_hex
 
+#For the calculator game
 from arithmetic import Arithmetic
 from json_settings import json_settings
 
+
 sm = ScreenManager()
 
+#Calling the other graphics files apart from textilemanager.kv
 Window.clearcolor = get_color_from_hex("#16203B")
 Builder.load_file("kv/middle.kv")
 Builder.load_file("kv/clothes.kv")
 Builder.load_file("kv/screens.kv")
 Builder.load_file("kv/play.kv")
 
-
+#Main classes in the project
 class MiddleScreen(Screen):
     pass
 
@@ -77,7 +92,7 @@ class WoodinLine(Screen):
 class HollandLine(Screen):
 	pass
 
-
+#Main textile manager class
 class TextileManager(ScreenManager):
     sales_screen = ObjectProperty(None)
     records_screen = ObjectProperty(None)
@@ -97,6 +112,7 @@ class TextileManager(ScreenManager):
     
  ################################################################################################3   
 
+#An app class returning main textile manager class
 class TextileManagerApp(App):
 	#---------------------------------------------------------------------------
     def build(self):
@@ -130,8 +146,8 @@ class TextileManagerApp(App):
             "kivy": "http://kivy.org/#home",
             "ttt": "https://github.com/afyacy/Kivy/blob/master/LICENSE"
         }
-
-        webbrowser.open(_dict[ref])
+        #webbrowser.open(_dict[ref])
 	
+
 if __name__ == '__main__':
     TextileManagerApp().run()
