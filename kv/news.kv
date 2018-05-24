@@ -1,0 +1,79 @@
+<News>:
+  BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+      Button:
+        font_name: "Roboto"
+        font_size: min(self.height, self.width) / 10
+        bold: True
+        pos: (root.width * .004, root.height * 3.68)
+        background_normal: "./images/button_normal.png"
+        background_down: "./images/button_down.png"
+        background_color: COLOR("#0066BA")
+        border: (2, 2, 2, 2)
+        halign: 'center'
+        valign: 'middle'
+        text: 'The Management of Tex Styles Ghana Limited is proud to announce the release of the latest Nustyle\n Collection called ZOOM unto the market from Tuesday 14th June, 2016 Zoom Collection is made up of skillfully\n integrated mini and maxi designs that is likely to attract and...'
+        background_color: COLOR("#FF5733")
+        on_release: app.toGtpWeb()
+
+    BoxLayout:
+      Button:
+        font_name: "Roboto"
+        font_size: min(self.height, self.width)/10
+        bold: True
+        pos: (root.width * .004, root.height * 3.68)
+        background_normal: "./images/button_normal.png"
+        background_down: "./images/button_down.png"
+        border: (2, 2, 2, 2)
+        background_color: COLOR("#C70039")
+        on_release: app.toWoodinWeb()
+        text: "Woodin, your favourite fast fashion brand has launched its latest collection, Illusion the Woodin. A\nfashion brand inspired by African culture and art – and you! Born and raised with African spirit and pride, \nWoodin vibrates our cultural diversity of music, textures, colours and inspiring people. "
+        
+
+
+    BoxLayout:
+      Button:
+        font_name: "Roboto"
+        font_size: min(self.height, self.width) / 10
+        bold: True
+        pos: (root.width * .004, root.height * 3.68)
+        background_normal: "./images/button_normal.png"
+        background_down: "./images/button_down.png"
+        border: (2, 2, 2, 2)
+        text: 'The traditional holland collection spans outwards to cover knitwear, shirting, footwear and accessories.\n Everything is designed to work as well within an urban setting as out on the moors, remaining stylish despite \ntheir technical excellence.'
+        background_color: COLOR("#900C3F")
+        on_release: app.toHollandWeb()
+
+
+    BoxLayout:
+      Button:
+        font_name: "Roboto"
+        font_size: min(self.height, self.width) / 10
+        bold: True
+        pos: (root.width * .004, root.height * 3.68)
+        background_normal: "./images/button_normal.png"
+        background_down: "./images/button_down.png"
+        border: (2, 2, 2, 2)
+        text: 'Get the Latest Ghana Fashion and style Updates. Photos of Cool Outfits & Stylish Clothes. Fashion \nDesigners & Best Wardrobe Advice in Ghana!.Imperial Fashion & Design School · accrafashionwk ... Ghana – \nCadling Fashions · accrafashionwk ... '
+        background_color: COLOR("#581845")
+        on_release: app.toFghWeb()
+
+<LineRectangle>:
+  canvas:
+    Ellipse:
+      pos: 10,465
+      size: 80, 80
+      source: 'images/gtp.jpg'
+    Color:
+      rgb: 225, 225, 225
+    Line:
+      width: 2.
+      rectangle: (self.x, self.y, self.width, self.height)
+    
+
+  Label:
+    center: root.center
+    text: 'GTP trend'
+    pos: (root.width * .004, root.height * 3.68)
+

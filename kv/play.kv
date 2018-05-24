@@ -1,6 +1,7 @@
 #:import COLOR kivy.utils.get_color_from_hex
 #:set RED "#F94A69"
 #:set GREEN "#06A5AB"
+#:set WHITE "#ffffff"
 
 <PlayScreen>:
   id: 'play_screen'
@@ -29,7 +30,7 @@
       background_color: COLOR("#0066BA")
       border: (2, 2, 2, 2)
       text: "Addition"
-      on_release: app.root.changeScreen(self.text.lower())
+      on_release:
     Button:
       font_name: "Roboto"
       font_size: min(self.height, self.width) / 4

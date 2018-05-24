@@ -9,15 +9,18 @@
       use_separator: True
       ActionView:
         ActionPrevious:
-          ActionButton:
-            on_press: app.root.current = 'news_screen' 
-            with_previous: True
+          on_press: app.root.current = 'middle_screen'
+          SearchBar:
+            size_hint_x: 1.7
+            size_hint_y: .7
+            pos_hint: {'x': 3, 'center_y':.5}
+            on_text_validate: searchbutt.trigger_action()
         ActionButton:
-          icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+          icon: 'images/searchIcon.png'
           on_press: 
         ActionButton:
           important: True
-          text: 'middle'
+          text: 'Home'
           on_press: app.root.current = 'middle_screen'
         ActionButton:
           text: 'Records'
@@ -46,7 +49,93 @@
     BoxLayout:
       size_hint: 1,.5
       MiddleThreeText:
+
+
 <RecordsScreen>:
+  name: "records_screen"
+  BoxLayout:
+    orientation: 'vertical'
+    background_color: COLOR("#0066BA")
+    ActionBar:
+      use_separator: True
+      ActionView:
+        ActionPrevious:
+          on_press: app.root.current = 'middle_screen'
+          SearchBar:
+            size_hint_x: 1.7
+            size_hint_y: .7
+            pos_hint: {'x': 3, 'center_y':.5}
+            on_text_validate: searchbutt.trigger_action()
+        ActionButton:
+          icon: 'images/searchIcon.png'
+          on_press: 
+        ActionButton:
+          important: True
+          text: 'Home'
+          on_press: app.root.current = 'middle_screen'
+        ActionButton:
+          text: 'Records'
+          on_press: app.root.current = 'records_screen'
+        ActionButton:
+          text: 'News'
+          on_press: app.root.current = 'news_screen' 
+        ActionButton:
+          text: 'Others'
+          on_press:  app.root.current = 'others_screen' 
+        ActionOverflow
+          ActionButton:
+            text: 'GTP'
+            on_press:  app.root.current = 'gtp_screen' 
+          ActionButton:
+            text: 'Woodin'
+            on_press:  app.root.current = 'woodin_screen' 
+          ActionButton:
+            text: 'Holland'
+            on_press: app.root.current = 'holland_screen'
+    Records:
+
+<NewsScreen>:
+  name: "news_screen"
+  BoxLayout:
+    orientation: 'vertical'
+    background_color: COLOR("#0066BA")
+    ActionBar:
+      use_separator: True
+      ActionView:
+        ActionPrevious:
+          on_press: app.root.current = 'middle_screen'
+          SearchBar:
+            size_hint_x: 1.7
+            size_hint_y: .7
+            pos_hint: {'x': 3, 'center_y':.5}
+            on_text_validate: searchbutt.trigger_action()
+        ActionButton:
+          icon: 'images/searchIcon.png'
+          on_press: 
+        ActionButton:
+          important: True
+          text: 'Home'
+          on_press: app.root.current = 'middle_screen'
+        ActionButton:
+          text: 'Records'
+          on_press: app.root.current = 'records_screen'
+        ActionButton:
+          text: 'News'
+          on_press: app.root.current = 'news_screen' 
+        ActionButton:
+          text: 'Others'
+          on_press:  app.root.current = 'others_screen' 
+        ActionOverflow
+          ActionButton:
+            text: 'GTP'
+            on_press:  app.root.current = 'gtp_screen' 
+          ActionButton:
+            text: 'Woodin'
+            on_press:  app.root.current = 'woodin_screen' 
+          ActionButton:
+            text: 'Holland'
+            on_press: app.root.current = 'holland_screen'
+    News:
 
 <OthersScreen>:
   name: "others_screen"
@@ -57,14 +146,18 @@
       use_separator: True
       ActionView:
         ActionPrevious:
-          title: "My Workplace >"
-          with_previous: False
+          on_press: app.root.current = 'middle_screen'
+          SearchBar:
+            size_hint_x: 1.7
+            size_hint_y: .7
+            pos_hint: {'x': 3, 'center_y':.5}
+            on_text_validate: searchbutt.trigger_action()
         ActionButton:
-          icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+          icon: 'images/searchIcon.png'
           on_press: 
         ActionButton:
           important: True
-          text: 'middle'
+          text: 'Home'
           on_press: app.root.current = 'middle_screen'
         ActionButton:
           text: 'Records'
@@ -84,13 +177,13 @@
             on_press:  app.root.current = 'woodin_screen' 
           ActionButton:
             text: 'Holland'
-            on_press: app.root.current = 'holland_screen' 
+            on_press: app.root.current = 'holland_screen'
     PlayScreen:
       
 
 
 <GTPScreen>:
-  name: "records_screen"
+  name: "gtp_screen"
   BoxLayout:
     orientation: 'vertical'
     background_color: COLOR("#0066BA")
@@ -98,14 +191,18 @@
       use_separator: True
       ActionView:
         ActionPrevious:
-          title: "My Workplace >"
-          with_previous: False
+          on_press: app.root.current = 'middle_screen'
+          SearchBar:
+            size_hint_x: 1.7
+            size_hint_y: .7
+            pos_hint: {'x': 3, 'center_y':.5}
+            on_text_validate: searchbutt.trigger_action()
         ActionButton:
-          icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+          icon: 'images/searchIcon.png'
           on_press: 
         ActionButton:
           important: True
-          text: 'middle'
+          text: 'Home'
           on_press: app.root.current = 'middle_screen'
         ActionButton:
           text: 'Records'
@@ -125,12 +222,13 @@
             on_press:  app.root.current = 'woodin_screen' 
           ActionButton:
             text: 'Holland'
-            on_press: app.root.current = 'holland_screen' 
+            on_press: app.root.current = 'holland_screen'
     GTPLine:
 
 
 
 <WoodinScreen>:
+  name: "woodin_screen"
   BoxLayout:
     orientation: 'vertical'
     background_color: COLOR("#0066BA")
@@ -138,14 +236,18 @@
       use_separator: True
       ActionView:
         ActionPrevious:
-          title: "My Workplace >"
-          with_previous: False
+          on_press: app.root.current = 'middle_screen'
+          SearchBar:
+            size_hint_x: 1.7
+            size_hint_y: .7
+            pos_hint: {'x': 3, 'center_y':.5}
+            on_text_validate: searchbutt.trigger_action()
         ActionButton:
-          icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+          icon: 'images/searchIcon.png'
           on_press: 
         ActionButton:
           important: True
-          text: 'middle'
+          text: 'Home'
           on_press: app.root.current = 'middle_screen'
         ActionButton:
           text: 'Records'
@@ -169,6 +271,7 @@
     WoodinLine:
 
 <HollandScreen>:
+  name: "holland_screen"
   BoxLayout:
     orientation: 'vertical'
     background_color: COLOR("#0066BA")
@@ -176,14 +279,18 @@
       use_separator: True
       ActionView:
         ActionPrevious:
-          title: "My Workplace >"
-          with_previous: False
+          on_press: app.root.current = 'middle_screen'
+          SearchBar:
+            size_hint_x: 1.7
+            size_hint_y: .7
+            pos_hint: {'x': 3, 'center_y':.5}
+            on_text_validate: searchbutt.trigger_action()
         ActionButton:
-          icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+          icon: 'images/searchIcon.png'
           on_press: 
         ActionButton:
           important: True
-          text: 'middle'
+          text: 'Home'
           on_press: app.root.current = 'middle_screen'
         ActionButton:
           text: 'Records'

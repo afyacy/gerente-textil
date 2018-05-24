@@ -10,7 +10,6 @@ from __future__ import print_function, unicode_literals
 from kivy.config import Config 
 Config.set('graphics', 'borderless', 'True')
 from kivy.core.window import Window
-Window.bordeless = 'True'
 
 import webbrowser
 import random
@@ -28,6 +27,9 @@ from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.properties import ObjectProperty
+from kivy.uix.textinput import TextInput
+from kivy.uix.actionbar import ActionItem
+from kivy.uix.widget import Widget
 from kivy.uix.screenmanager import ScreenManager,Screen, WipeTransition
 from kivy.utils import get_color_from_hex
 
@@ -44,6 +46,7 @@ Builder.load_file("kv/middle.kv")
 Builder.load_file("kv/clothes.kv")
 Builder.load_file("kv/screens.kv")
 Builder.load_file("kv/play.kv")
+Builder.load_file("kv/news.kv")
 
 #Main classes in the project
 class MiddleScreen(Screen):
@@ -52,9 +55,14 @@ class MiddleScreen(Screen):
 class RecordsScreen(Screen):
     pass
 
+class Records(Screen):
+    pass
+
 class NewsScreen(Screen):
     pass
 
+class News(Screen):
+    pass
 ################################################################################################
 class OthersScreen(Screen):
     pass
@@ -92,6 +100,20 @@ class WoodinLine(Screen):
 class HollandLine(Screen):
 	pass
 
+class LineRectangle(Widget):
+    pass
+
+##################################################################################################
+class SearchBar(TextInput, ActionItem):
+    def __init__(self, *args, **kwargs):
+        super(SearchBar, self).__init__(*args, **kwargs)
+        self.hint_text='Enter Product'
+        self.id='inputText'
+    def search(self):
+        request = self.text
+        return str(request)
+#####################################################################################################
+
 #Main textile manager class
 class TextileManager(ScreenManager):
     sales_screen = ObjectProperty(None)
@@ -117,11 +139,18 @@ class TextileManagerApp(App):
 	#---------------------------------------------------------------------------
     def build(self):
         m = TextileManager(transition=WipeTransition())
+        root = GridLayout(cols=2, padding=50, spacing=50)
+        root.add_widget(LineRectangle())
         return TextileManager()
 
     #----------------------------------------------------------------------------
     def __init__(self, **kwargs):
     	super(TextileManagerApp, self).__init__(**kwargs)
+
+
+    #----------------------------------------------------------------------------
+    def getInputboxText():
+        print(instance.text)
 
     #----------------------------------------------------------------------------
 
@@ -137,6 +166,19 @@ class TextileManagerApp(App):
                 "[b][ref=source]here[/ref][/b].\n"
                 "This app is under the [b][ref=Afyacy] Afyacy License[/ref][/b]")
 
+    #------------------------------------------------------------------------------
+    def toGtpWeb(self):
+        return(webbrowser.open('http://gtpfashion.com/news/'))
+    #------------------------------------------------------------------------------
+    def toWoodinWeb(self):
+        return(webbrowser.open('http://www.woodinfashion.com/'))
+    #------------------------------------------------------------------------------
+    def toHollandWeb(self):
+        return(webbrowser.open('https://www.hollandandholland.com/clothing-collection/'))
+    #------------------------------------------------------------------------------
+    def toFghWeb(self):
+        return(webbrowser.open('https://www.fashionghana.com/#'))
+   
     #----------------------------------------------------------------------------
 
     def on_ref_press(self, instance, ref):
